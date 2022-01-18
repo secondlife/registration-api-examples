@@ -1,0 +1,19 @@
+<html>
+<head>
+<title>Third Party Name Check Test</title>
+</head>
+
+<body>
+<h1>Third Party Name Check Test</h1>
+
+<%= start_form_tag %>
+<table>
+<tr><td>First Name</td><td><%= text_field_tag :username %></td></tr>
+<tr><td>Last Name</td><td><%= select_tag :last_name_id, (options_from_collection_for_select @last_names_hash, 'first', 'last') %> </td></tr>
+</table>
+<br />
+<%= submit_tag "Check"%>
+<%= end_form_tag %>
+
+</body>
+</html>

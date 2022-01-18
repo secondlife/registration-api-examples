@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>Third Party Registration Test</title>
+</head>
+
+<body>
+<h1>Third Party Registration Test</h1>
+
+<%= start_form_tag %>
+<table>
+<tr><td>First Name</td><td><%= text_field_tag :username %></td></tr>
+<tr><td>Last Name</td><td><%= select_tag :last_name_id, (options_from_collection_for_select @last_names_hash, 'first', 'last') %> </td></tr>
+<tr><td>Email</td><td><%= text_field_tag :email %></td></tr>
+<tr><td>Password</td><td><%= text_field_tag :password %></td></tr>
+<tr><td>Dob</td><td><%= select_date Time.now, :start_year => 1900 %></td></tr>
+<br />
+<tr><td>Starting Region</td><td><%= text_field_tag :start_region_name, 'da boom' %></td></tr>
+</table>
+<br />
+<%= submit_tag "register"%>
+<%= end_form_tag %>
+
+</body>
+</html>
