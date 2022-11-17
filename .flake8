@@ -1,0 +1,10 @@
+[flake8]
+extend-ignore =
+    ; E203 whitespace before ':' contravenes PEP 8 so Black will break it.
+    ; <https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html#slices>
+    E203,
+    ; Black will also fudge the line length limit if it needs to. Use B950 instead
+    ; of E501 to allow fudging.
+    ; <https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html#line-length>
+    E501
+extend-select = B950

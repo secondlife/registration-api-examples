@@ -1,10 +1,14 @@
-require 'LLSD'
+# frozen_string_literal: true
 
+require 'llsd'
+
+# An example Rails controller that demonstrates checking the Registration API
+# whether names exist.
 class RegistrationTestController < ApplicationController
   # FILL THESE IN WITH YOUR OWN CAPABILITY URLS
-  CREATE_USER_URL = "???"
-  GET_LAST_NAMES_URL = "???"
-  CHECK_NAME_URL = "???"
+  CREATE_USER_URL = '???'
+  GET_LAST_NAMES_URL = '???'
+  CHECK_NAME_URL = '???'
 
   def test_create_user
     if request.get?
@@ -22,7 +26,7 @@ class RegistrationTestController < ApplicationController
 
       # @headers["Content-Type"] = "text/xml"
 
-      render_text (LLSD.http_raw CREATE_USER_URL, reg_hash)
+      render_text(LLSD.http_raw(CREATE_USER_URL, reg_hash))
     end
   end
 
@@ -34,7 +38,7 @@ class RegistrationTestController < ApplicationController
       reg_hash['username'] = params[:username]
       reg_hash['last_name_id'] = params[:last_name_id].to_i
 
-      render_text (LLSD.http_raw CHECK_NAME_URL, reg_hash)
+      render_text(LLSD.http_raw(CHECK_NAME_URL, reg_hash))
     end
   end
 end
