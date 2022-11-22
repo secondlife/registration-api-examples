@@ -12,7 +12,7 @@ import llsd
 # 0 - get capability urls
 # 1 - get error codes
 # 2 - get the available last names
-# 3 - check to see of a username + last name combo is taken
+# 3 - check to see if a username + last name combo is taken
 # 4 - register the user with this username + last name combo
 
 get_capabilities_url = "https://cap.secondlife.com/get_reg_capabilities"
@@ -26,7 +26,7 @@ else:
     print(
         "Please pass in your second life first name, last name, and password as arguments. For example:"
     )
-    print("ruby registration_api.rb registration mackay 1234")
+    print("python registration_api.py registration mackay 1234")
 
     sys.exit()
 
